@@ -81,6 +81,32 @@ public class ProductDAO {
         return null;
     }
 
+    public List<Product> getProductbyCateID(String cid) {
+        List<Product> list = new ArrayList<>();
+        String query = "select * from tbProduct\n"
+                + "where CateID = ?";
+
+        try {
+            ps = conn.prepareStatement(query);
+            ps.setString(1, cid);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                list.add(new Product(rs.getInt(1),
+                        rs.getString(2),
+                        rs.getInt(3),
+                        rs.getInt(4),
+                        rs.getString(5),
+                        rs.getString(6),
+                        rs.getInt(7),
+                        rs.getInt(8),
+                        rs.getDate(9)));
+            }
+        } catch (Exception e) {
+        }
+
+        return list;
+    }
+
     public List<Category> getAllCategory() {
 
         List<Category> list = new ArrayList<>();
@@ -97,6 +123,23 @@ public class ProductDAO {
         }
 
         return list;
+    }
+
+    public Category getCateNameByID(String cid) {
+        try {
+            String query = "select CateName from tbCate\n"
+                    + "where CateID = ?";
+            ps = conn.prepareStatement(query);
+            ps.setString(1, cid);
+            rs = ps.executeQuery();
+            int id = Integer.parseInt(cid);
+            while(rs.next()){
+                Category c = new Category(id, rs.getString(1));
+                return c;
+            }
+        } catch (Exception e) {
+        }
+        return null;
     }
 
     public void deleteProduct(String pid) {

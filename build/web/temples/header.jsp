@@ -35,18 +35,18 @@
                     <a href="#">PRODUCT<i class="fa-solid fa-chevron-down"></i></a>
                     <ul class="sub-menu">
                         <c:forEach items="${listCate}" var="o">
-                            <li><a href="#">${o.cateName}</a></li>
+                            <li><a href="product?cid=${o.cateID}">${o.cateName}</a></li>
                         </c:forEach>
 
                     </ul>
                 </li>
-                <c:if test="${sessionScope.acc == null}">
+                <c:if test="${sessionScope.a == null}">
                     <li><a href="Login.jsp">LOGIN</a></li>
                     <li><a href="Login.jsp">SIGN UP</a></li>
                 </c:if>
                     
-                <c:if test="${sessionScope.acc != null}">
-                    <li><a href="#">HELLO ${sessionScope.acc.password}</a></li>
+                <c:if test="${sessionScope.a != null}">
+                    <li><a href="#">HELLO ${sessionScope.a.username}</a></li>
                     <li><a href="logout">LOG OUT</a></li>
                 </c:if>
 

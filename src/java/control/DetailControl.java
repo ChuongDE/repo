@@ -4,8 +4,9 @@
  */
 package control;
 
+import dao.ProductDAO;
+import entity.Product;
 import java.io.IOException;
-import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -30,7 +31,7 @@ public class DetailControl extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         
-        request.getRequestDispatcher("Detail.jsp").forward(request, response);
+        
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -45,7 +46,12 @@ public class DetailControl extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        String pid = request.getParameter("pid");
+        ProductDAO data = new ProductDAO();
+        Product p = data.getProductByID(pid);   
+        
+        request.setAttribute("detail", p);
+        request.getRequestDispatcher("Detail.jsp").forward(request, response);
     }
 
     /**

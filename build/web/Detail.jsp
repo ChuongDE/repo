@@ -63,8 +63,7 @@
                                 <aside class="col-sm-5 border-right">
                                     <article class="gallery-wrap"> 
                                         <div class="img-big-wrap">
-                                            <div> <a href="#"><img src="https://orchard.vn/wp-content/uploads/2014/06/Versace-Pour-Homme_1.jpg
-"></a></div>
+                                            <div> <a href="#"><img src="${detail.image}"></a></div>
                                         </div> <!-- slider-product.// -->
                                         <div class="img-small-wrap">
                                         </div> <!-- slider-nav.// -->
@@ -72,11 +71,11 @@
                                 </aside>
                                 <aside class="col-sm-7">
                                     <article class="card-body p-5">
-                                        <h3 class="title mb-3">${detail.name}</h3>
+                                        <h3 class="title mb-3" style="font-size: 22px">${detail.productName}</h3>
 
                                         <p class="price-detail-wrap"> 
                                             <span class="price h3 text-warning"> 
-                                                <span class="currency">US $</span><span class="num">${detail.price}</span>
+                                                <span class="num">${detail.salePrice} </span><span class="currency"> VND</span>
                                             </span> 
                                         </p> <!-- price-detail-wrap .// -->
                                         <dl class="item-property">

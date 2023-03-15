@@ -24,7 +24,7 @@
             <div class="box">
 
                 <div class="title">LOGIN</div>
-
+                <h3 style="color: red">${requestScope.error}</h3>
                 <div class="input">
                     <label for="name">Username</label>
                     <input type="text" name="username" id="name">

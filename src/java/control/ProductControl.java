@@ -5,6 +5,7 @@
 package control;
 
 import dao.ProductDAO;
+import entity.Category;
 import entity.Product;
 import java.io.IOException;
 import java.util.List;
@@ -24,12 +25,16 @@ public class ProductControl extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-               ProductDAO dao = new ProductDAO();
-        List<Product> listP = dao.getAllProduct();
-        
-        request.setAttribute("ListP", listP);
+        String cid = request.getParameter("cid");
+        ProductDAO dao = new ProductDAO();
+//        List<Product> listP = dao.getAllProduct();
+        List<Product> ListC = dao.getProductbyCateID(cid);
+        Category c = dao.getCateNameByID(cid);
+        request.setAttribute("ListC", ListC);
+        request.setAttribute("cate", c);
+//        request.setAttribute("ListP", listP);
         request.getRequestDispatcher("ProductPage.jsp").forward(request, response);
-   
+
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -45,8 +50,8 @@ public class ProductControl extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
-        
-  }
+
+    }
 
     /**
      * Handles the HTTP <code>POST</code> method.
@@ -59,7 +64,7 @@ public class ProductControl extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-       processRequest(request, response);
+        processRequest(request, response);
 
     }
 

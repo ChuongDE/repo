@@ -26,21 +26,15 @@
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container px-4 px-lg-5">
-                <a class="navbar-brand" href="#!">Start Bootstrap</a>
+                <a class="navbar-brand" href="home">ALLORA</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
-                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="#!">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#!">About</a></li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Shop</a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="#!">All Products</a></li>
-                                <li><hr class="dropdown-divider" /></li>
-                                <li><a class="dropdown-item" href="#!">Popular Items</a></li>
-                                <li><a class="dropdown-item" href="#!">New Arrivals</a></li>
-                            </ul>
-                        </li>
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="home">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="product?cid=1">Nước Hoa Mini</a></li>
+                        <li class="nav-item"><a class="nav-link" href="product?cid=2">Nước Hoa Nam</a></li>
+                        <li class="nav-item"><a class="nav-link" href="product?cid=3">Nước Hoa Nữ</a></li>
+                        
                     </ul>
                     <form class="d-flex">
                         <button class="btn btn-outline-dark" type="submit">
@@ -56,8 +50,7 @@
         <header class="bg-dark py-5">
             <div class="container px-4 px-lg-5 my-5">
                 <div class="text-center text-white">
-                    <h1 class="display-4 fw-bolder">Shop in style</h1>
-                    <p class="lead fw-normal text-white-50 mb-0">With this shop hompeage template</p>
+                    <h1 class="display-4 fw-bolder">${cate.cateName}</h1>
                 </div>
             </div>
         </header>
@@ -65,7 +58,7 @@
         <section class="py-5">
             <div class="container px-4 px-lg-5 mt-5">
                 <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
-                    <c:forEach items="${ListP}" var="o">
+                    <c:forEach items="${ListC}" var="o">
                         <div class="col mb-5">
                             <div class="card h-100" style="box-shadow: 2px 2px 15px 0 rgba(0, 0, 0, 0.19)">
                                 <!-- Product image-->
@@ -74,7 +67,7 @@
                                 <div class="card-body p-4">
                                     <div class="text-center">
                                         <!-- Product name-->
-                                        <a href="#" style="text-decoration: none; color: black" >
+                                        <a href="detail?pid=${o.productID}" style="text-decoration: none; color: black" >
                                             <h5 class="fw-bolder">${o.productName}</h5>
                                         </a>
                                         <!-- Product price-->

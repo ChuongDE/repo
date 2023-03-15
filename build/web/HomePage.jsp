@@ -51,23 +51,22 @@
     <div class="body2">
         <div class="body2_child1 col-md-3">
             <img width="100%" src="./assets/IMG/jean-paul-gaultier-le-male-orchardvn-anh1.jpg" alt="">
-            <a href="">NƯỚC HOA NAM</a>
             <p class="mota">
-
+                <a href="product?cid=2">NƯỚC HOA NAM</a>
                 <strong>Gaultier</strong> dành cho nam giới, ông muốn làm hồi sinh những giá trị truyền thống trong nước hoa Le Male. Kiểu chai thể hiện một cách gợi cảm qua hình tượng bán thân của nam giới với chiếc áo thủy thủ
             </p>
         </div>
         <div class="body2_child1 col-md-3">
             <img width="100%" height="375px" src="assets/IMG/Coco-Mademoiselle-intense-edp-orchard.vn_.jpg" alt="">
             <p class="mota">
-                <a href="">NƯỚC HOA NỮ</a>
+                <a href="product?cid=3">NƯỚC HOA NỮ</a>
                 <strong>Chanel Coco</strong> Mademoiselle Intense EDP được xem như là biểu tượng nhất. Nó là No5 cho thời hiện đại và kể từ khi ra mắt vào năm 2001 Coco Chanel đã là mùi thơm được lựa chọn của tất cả thế hệ phụ nữ. 
             </p>
         </div>
         <div class="body2_child1 col-md-3">
             <img width="100%" src="assets/IMG/banner_mini.jpg" alt="">
             <p class="mota">
-                <a href="">NƯỚC HOA MINI</a>
+                <a href="product?cid=1">NƯỚC HOA MINI</a>
                 <strong>Miss Dior</strong>: chính thức được giới thiệu đến công chúng với sắc hồng tím ngọt lịm và chiếc nơ truyền thống trên cổ chai đã được thay đổi bằng chiếc nơ vải ánh bạc điệu đà, nữ tính
             </p>
         </div>

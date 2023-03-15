@@ -20,7 +20,13 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700">
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+            integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" />
         <link href="css/manager.css" rel="stylesheet" type="text/css"/>
+        <link href="css/manager1.css" rel="stylesheet" type="text/css"/>
+
 
         <style>
             img{
@@ -29,7 +35,31 @@
             }
         </style>
     <body>
-        
+        <header class="header">
+            
+            <div class="navbarr">
+                <div class="logo"><a href="#">Admin Panel</a></div>
+                <ul class="links">
+                    <li><a href="admin">Dashboard</a></li>
+                    <li><a href="manager">Product Manager</a></li>
+                    <li><a href="inventory">Inventory</a></li>
+                    <li><a href="contact">User Manager</a></li>
+                    <li><a href="contact">Home</a></li>
+                </ul>
+                
+                <div class="toggle_btn">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+            </div>
+            <div class="dropdown_menu">
+                <li><a href="hero">Home</a></li>
+                <li><a href="about">About</a></li>
+                <li><a href="services">Services</a></li>
+                <li><a href="contact">Contact</a></li>
+                <li><a href="contact">Home</a></li>
+            </div>
+        </header>
+
         <div class="container">
             <div class="table-wrapper">
                 <div class="table-title">
