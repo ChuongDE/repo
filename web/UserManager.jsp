@@ -1,419 +1,135 @@
-<%-- 
-    Document   : UserManager
-    Created on : Mar 7, 2023, 9:12:33 AM
-    Author     : PC
---%>
-
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <title>Admin Dashboard</title>
 
+        <!-- Montserrat Font -->
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-        <title>User list page - Bootdey.com</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="https://netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
-        <link href="css/account.css" rel="stylesheet">
+        <!-- Material Icons -->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="css/usermanager.css">
+
+        <link href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     </head>
     <body>
-        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="main-box clearfix">
-                        <div class="table-responsive">
-                            <table class="table user-list">
-                                <thead>
-                                    <tr>
-                                        <th><span>User</span></th>
-                                        <th><span>Created</span></th>
-                                        <th class="text-center"><span>Status</span></th>
-                                        <th><span>Email</span></th>
-                                        <th>&nbsp;</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>
-                                            <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="">
-                                            <a href="#" class="user-link">Mila Kunis</a>
-                                            <span class="user-subhead">Admin</span>
-                                        </td>
-                                        <td>
-                                            2013/08/08
-                                        </td>
-                                        <td class="text-center">
-                                            <span class="label label-default">Inactive</span>
-                                        </td>
-                                        <td>
-                                            <a href="#"><span class="__cf_email__" data-cfemail="d2bfbbbeb392b9a7bcbba1fcb1bdbf">[email&#160;protected]</span></a>
-                                        </td>
-                                        <td style="width: 20%;">
-                                            <a href="#" class="table-link">
-                                                <span class="fa-stack">
-                                                    <i class="fa fa-square fa-stack-2x"></i>
-                                                    <i class="fa fa-search-plus fa-stack-1x fa-inverse"></i>
-                                                </span>
-                                            </a>
-                                            <a href="#" class="table-link">
-                                                <span class="fa-stack">
-                                                    <i class="fa fa-square fa-stack-2x"></i>
-                                                    <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
-                                                </span>
-                                            </a>
-                                            <a href="#" class="table-link danger">
-                                                <span class="fa-stack">
-                                                    <i class="fa fa-square fa-stack-2x"></i>
-                                                    <i class="fa fa-trash-o fa-stack-1x fa-inverse"></i>
-                                                </span>
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <img src="https://bootdey.com/img/Content/avatar/avatar2.png" alt="">
-                                            <a href="#" class="user-link">George Clooney</a>
-                                            <span class="user-subhead">Member</span>
-                                        </td>
-                                        <td>
-                                            2013/08/12
-                                        </td>
-                                        <td class="text-center">
-                                            <span class="label label-success">Active</span>
-                                        </td>
-                                        <td>
-                                            <a href="#"><span class="__cf_email__" data-cfemail="4d202c3f2122230d2f3f2c232922632e2220">[email&#160;protected]</span></a>
-                                        </td>
-                                        <td style="width: 20%;">
-                                            <a href="#" class="table-link">
-                                                <span class="fa-stack">
-                                                    <i class="fa fa-square fa-stack-2x"></i>
-                                                    <i class="fa fa-search-plus fa-stack-1x fa-inverse"></i>
-                                                </span>
-                                            </a>
-                                            <a href="#" class="table-link">
-                                                <span class="fa-stack">
-                                                    <i class="fa fa-square fa-stack-2x"></i>
-                                                    <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
-                                                </span>
-                                            </a>
-                                            <a href="#" class="table-link danger">
-                                                <span class="fa-stack">
-                                                    <i class="fa fa-square fa-stack-2x"></i>
-                                                    <i class="fa fa-trash-o fa-stack-1x fa-inverse"></i>
-                                                </span>
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <img src="https://bootdey.com/img/Content/avatar/avatar3.png" alt="">
-                                            <a href="#" class="user-link">Ryan Gossling</a>
-                                            <span class="user-subhead">Registered</span>
-                                        </td>
-                                        <td>
-                                            2013/03/03
-                                        </td>
-                                        <td class="text-center">
-                                            <span class="label label-danger">Banned</span>
-                                        </td>
-                                        <td>
-                                            <a href="#"><span class="__cf_email__" data-cfemail="8ee4efede5cee0e7ede6e1e2fde1e0">[email&#160;protected]</span></a>
-                                        </td>
-                                        <td style="width: 20%;">
-                                            <a href="#" class="table-link">
-                                                <span class="fa-stack">
-                                                    <i class="fa fa-square fa-stack-2x"></i>
-                                                    <i class="fa fa-search-plus fa-stack-1x fa-inverse"></i>
-                                                </span>
-                                            </a>
-                                            <a href="#" class="table-link">
-                                                <span class="fa-stack">
-                                                    <i class="fa fa-square fa-stack-2x"></i>
-                                                    <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
-                                                </span>
-                                            </a>
-                                            <a href="#" class="table-link danger">
-                                                <span class="fa-stack">
-                                                    <i class="fa fa-square fa-stack-2x"></i>
-                                                    <i class="fa fa-trash-o fa-stack-1x fa-inverse"></i>
-                                                </span>
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <img src="https://bootdey.com/img/Content/avatar/avatar4.png" alt="">
-                                            <a href="#" class="user-link">Emma Watson</a>
-                                            <span class="user-subhead">Registered</span>
-                                        </td>
-                                        <td>
-                                            2004/01/24
-                                        </td>
-                                        <td class="text-center">
-                                            <span class="label label-warning">Pending</span>
-                                        </td>
-                                        <td>
-                                            <a href="#"><span class="__cf_email__" data-cfemail="721a071f021a00170b32101d151300065c111d1f">[email&#160;protected]</span></a>
-                                        </td>
-                                        <td style="width: 20%;">
-                                            <a href="#" class="table-link">
-                                                <span class="fa-stack">
-                                                    <i class="fa fa-square fa-stack-2x"></i>
-                                                    <i class="fa fa-search-plus fa-stack-1x fa-inverse"></i>
-                                                </span>
-                                            </a>
-                                            <a href="#" class="table-link">
-                                                <span class="fa-stack">
-                                                    <i class="fa fa-square fa-stack-2x"></i>
-                                                    <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
-                                                </span>
-                                            </a>
-                                            <a href="#" class="table-link danger">
-                                                <span class="fa-stack">
-                                                    <i class="fa fa-square fa-stack-2x"></i>
-                                                    <i class="fa fa-trash-o fa-stack-1x fa-inverse"></i>
-                                                </span>
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <img src="https://bootdey.com/img/Content/avatar/avatar5.png" alt="">
-                                            <a href="#" class="user-link">Robert Downey Jr.</a>
-                                            <span class="user-subhead">Admin</span>
-                                        </td>
-                                        <td>
-                                            2013/12/31
-                                        </td>
-                                        <td class="text-center">
-                                            <span class="label label-success">Active</span>
-                                        </td>
-                                        <td>
-                                            <a href="#"><span class="__cf_email__" data-cfemail="b0c3c0d5ded3d5c2f0c4c2d1d3c9">[email&#160;protected]</span></a>
-                                        </td>
-                                        <td style="width: 20%;">
-                                            <a href="#" class="table-link">
-                                                <span class="fa-stack">
-                                                    <i class="fa fa-square fa-stack-2x"></i>
-                                                    <i class="fa fa-search-plus fa-stack-1x fa-inverse"></i>
-                                                </span>
-                                            </a>
-                                            <a href="#" class="table-link">
-                                                <span class="fa-stack">
-                                                    <i class="fa fa-square fa-stack-2x"></i>
-                                                    <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
-                                                </span>
-                                            </a>
-                                            <a href="#" class="table-link danger">
-                                                <span class="fa-stack">
-                                                    <i class="fa fa-square fa-stack-2x"></i>
-                                                    <i class="fa fa-trash-o fa-stack-1x fa-inverse"></i>
-                                                </span>
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <img src="https://bootdey.com/img/Content/avatar/avatar6.png" alt="">
-                                            <a href="#" class="user-link">Mila Kunis</a>
-                                            <span class="user-subhead">Admin</span>
-                                        </td>
-                                        <td>
-                                            2013/08/08
-                                        </td>
-                                        <td class="text-center">
-                                            <span class="label label-default">Inactive</span>
-                                        </td>
-                                        <td>
-                                            <a href="#"><span class="__cf_email__" data-cfemail="75181c1914351e001b1c065b161a18">[email&#160;protected]</span></a>
-                                        </td>
-                                        <td style="width: 20%;">
-                                            <a href="#" class="table-link">
-                                                <span class="fa-stack">
-                                                    <i class="fa fa-square fa-stack-2x"></i>
-                                                    <i class="fa fa-search-plus fa-stack-1x fa-inverse"></i>
-                                                </span>
-                                            </a>
-                                            <a href="#" class="table-link">
-                                                <span class="fa-stack">
-                                                    <i class="fa fa-square fa-stack-2x"></i>
-                                                    <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
-                                                </span>
-                                            </a>
-                                            <a href="#" class="table-link danger">
-                                                <span class="fa-stack">
-                                                    <i class="fa fa-square fa-stack-2x"></i>
-                                                    <i class="fa fa-trash-o fa-stack-1x fa-inverse"></i>
-                                                </span>
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="">
-                                            <a href="#" class="user-link">George Clooney</a>
-                                            <span class="user-subhead">Member</span>
-                                        </td>
-                                        <td>
-                                            2013/08/12
-                                        </td>
-                                        <td class="text-center">
-                                            <span class="label label-success">Active</span>
-                                        </td>
-                                        <td>
-                                            <a href="#"><span class="__cf_email__" data-cfemail="dbb6baa9b7b4b59bb9a9bab5bfb4f5b8b4b6">[email&#160;protected]</span></a>
-                                        </td>
-                                        <td style="width: 20%;">
-                                            <a href="#" class="table-link">
-                                                <span class="fa-stack">
-                                                    <i class="fa fa-square fa-stack-2x"></i>
-                                                    <i class="fa fa-search-plus fa-stack-1x fa-inverse"></i>
-                                                </span>
-                                            </a>
-                                            <a href="#" class="table-link">
-                                                <span class="fa-stack">
-                                                    <i class="fa fa-square fa-stack-2x"></i>
-                                                    <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
-                                                </span>
-                                            </a>
-                                            <a href="#" class="table-link danger">
-                                                <span class="fa-stack">
-                                                    <i class="fa fa-square fa-stack-2x"></i>
-                                                    <i class="fa fa-trash-o fa-stack-1x fa-inverse"></i>
-                                                </span>
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="">
-                                            <a href="#" class="user-link">Ryan Gossling</a>
-                                            <span class="user-subhead">Registered</span>
-                                        </td>
-                                        <td>
-                                            2013/03/03
-                                        </td>
-                                        <td class="text-center">
-                                            <span class="label label-danger">Banned</span>
-                                        </td>
-                                        <td>
-                                            <a href="#"><span class="__cf_email__" data-cfemail="e389828088a38d8a808b8c8f908c8d">[email&#160;protected]</span></a>
-                                        </td>
-                                        <td style="width: 20%;">
-                                            <a href="#" class="table-link">
-                                                <span class="fa-stack">
-                                                    <i class="fa fa-square fa-stack-2x"></i>
-                                                    <i class="fa fa-search-plus fa-stack-1x fa-inverse"></i>
-                                                </span>
-                                            </a>
-                                            <a href="#" class="table-link">
-                                                <span class="fa-stack">
-                                                    <i class="fa fa-square fa-stack-2x"></i>
-                                                    <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
-                                                </span>
-                                            </a>
-                                            <a href="#" class="table-link danger">
-                                                <span class="fa-stack">
-                                                    <i class="fa fa-square fa-stack-2x"></i>
-                                                    <i class="fa fa-trash-o fa-stack-1x fa-inverse"></i>
-                                                </span>
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="">
-                                            <a href="#" class="user-link">Emma Watson</a>
-                                            <span class="user-subhead">Registered</span>
-                                        </td>
-                                        <td>
-                                            2004/01/24
-                                        </td>
-                                        <td class="text-center">
-                                            <span class="label label-warning">Pending</span>
-                                        </td>
-                                        <td>
-                                            <a href="#"><span class="__cf_email__" data-cfemail="137b667e637b61766a53717c747261673d707c7e">[email&#160;protected]</span></a>
-                                        </td>
-                                        <td style="width: 20%;">
-                                            <a href="#" class="table-link">
-                                                <span class="fa-stack">
-                                                    <i class="fa fa-square fa-stack-2x"></i>
-                                                    <i class="fa fa-search-plus fa-stack-1x fa-inverse"></i>
-                                                </span>
-                                            </a>
-                                            <a href="#" class="table-link">
-                                                <span class="fa-stack">
-                                                    <i class="fa fa-square fa-stack-2x"></i>
-                                                    <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
-                                                </span>
-                                            </a>
-                                            <a href="#" class="table-link danger">
-                                                <span class="fa-stack">
-                                                    <i class="fa fa-square fa-stack-2x"></i>
-                                                    <i class="fa fa-trash-o fa-stack-1x fa-inverse"></i>
-                                                </span>
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <img src="https://bootdey.com/img/Content/avatar/avatar6.png" alt="">
-                                            <a href="#" class="user-link">Robert Downey Jr.</a>
-                                            <span class="user-subhead">Admin</span>
-                                        </td>
-                                        <td>
-                                            2013/12/31
-                                        </td>
-                                        <td class="text-center">
-                                            <span class="label label-success">Active</span>
-                                        </td>
-                                        <td>
-                                            <a href="#"><span class="__cf_email__" data-cfemail="a6d5d6c3c8c5c3d4e6d2d4c7c5df">[email&#160;protected]</span></a>
-                                        </td>
-                                        <td style="width: 20%;">
-                                            <a href="#" class="table-link">
-                                                <span class="fa-stack">
-                                                    <i class="fa fa-square fa-stack-2x"></i>
-                                                    <i class="fa fa-search-plus fa-stack-1x fa-inverse"></i>
-                                                </span>
-                                            </a>
-                                            <a href="#" class="table-link">
-                                                <span class="fa-stack">
-                                                    <i class="fa fa-square fa-stack-2x"></i>
-                                                    <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
-                                                </span>
-                                            </a>
-                                            <a href="#" class="table-link danger"> 
-                                                <span class="fa-stack">
-                                                    <i class="fa fa-square fa-stack-2x"></i>
-                                                    <i class="fa fa-trash-o fa-stack-1x fa-inverse"></i>
-                                                </span>
-                                            </a>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                        <ul class="pagination pull-right">
-                            <li><a href="#"><i class="fa fa-chevron-left"></i></a></li>
-                            <li><a href="#">1</a></li>
-                            <li><a href="#">2</a></li>
-                            <li><a href="#">3</a></li>
-                            <li><a href="#">4</a></li>
-                            <li><a href="#">5</a></li>
-                            <li><a href="#"><i class="fa fa-chevron-right"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
-        <script src="https://netdna.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-        <script type="text/javascript">
+        <div class="grid-container">
 
-        </script>
-    </body>
-</html>
+            
+            <!-- Header -->
+            <header class="header">
+                <div class="menu-icon" onclick="openSidebar()">
+                    <span class="material-icons-outlined">menu</span>
+                </div>
+                <div class="header-left">
+                    <span class="material-icons-outlined">search</span>
+                </div>
+                <div class="header-right">
+                    <c:if test="${sessionScope.account.getRole() == 1}">
+                        <h5>Xin Chào ${sessionScope.account.username}</h5>
+                    </c:if>
+                </div>
+                <span class="material-icons-outlined">account_circle</span>
+            </header>
+            <!-- End Header -->
+
+            <!-- Sidebar -->
+            <aside id="sidebar">
+                <div class="sidebar-title">
+                    <div class="sidebar-brand">
+                        <span class="material-symbols-outlined">
+                            admin_panel_settings
+                        </span> Admin Panel
+                    </div>
+                    <span class="material-icons-outlined" onclick="closeSidebar()">close</span>
+                </div>
+
+                <ul class="sidebar-list">
+                    <li class="sidebar-list-item">
+                        <a href="admin  " target="">
+                            <span class="material-icons-outlined">dashboard</span> Dashboard
+                        </a>
+                    </li>
+                    <li class="sidebar-list-item">
+                        <a href="manager" target="">
+                            <span class="material-icons-outlined">inventory_2</span> Products
+                        </a>
+                    </li>
+                    <li class="sidebar-list-item">
+                        <a href="inventory" target="">
+                            <span class="material-icons-outlined">fact_check</span> Inventory
+                        </a>
+                    </li>
+                    <li class="sidebar-list-item">
+                        <a href="#" target="_blank">
+                            <span class="material-icons-outlined">add_shopping_cart</span> Purchase Orders
+                        </a>
+                    </li>
+                    <li class="sidebar-list-item">
+                        <a href="#" target="_blank">
+                            <span class="material-icons-outlined">shopping_cart</span> Sales Orders
+                        </a>
+                    </li>
+                    <li class="sidebar-list-item">
+                        <a href="userctl" target="">
+                            <span class="material-symbols-outlined">manage_accounts</span> Account Manager
+                        </a>
+                    </li>
+                    <li class="sidebar-list-item">
+                        <a href="#" target="_blank">
+                            <span class="material-icons-outlined">settings</span> Settings
+                        </a>
+                    </li>
+                </ul>
+            </aside>
+            <!-- End Sidebar -->
+
+            <!-- Main -->
+            <div class="containerr">
+                <div class="table-wrapper">
+                    <div class="table-title">
+                        <div class="menu">
+                            <div >
+                                <h2 style="width: 100%;">Manage <b>Users</b></h2>
+                            </div>
+                        </div>
+                    </div>
+
+                    <table class="table table-striped table-hover">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Address</th>
+                                <th>Phone</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            <tr>
+                                <td>DE160410</td>
+                                <td>Nguyen Bao Trung</td>
+                                <td>123124qmaoinsfonofnunaouuo onfaowienfoinowienoifn</td>                               
+                                <td>54564616464616</td>
+                                <td>
+                                    <a href="" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+                                    <a href="" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+
+                    <!-- ApexCharts -->
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.35.3/apexcharts.min.js"></script>
+                    <!-- Custom JS -->
+                    <script src="./js/manager.js"></script>
+                    </body>
+                    </html>

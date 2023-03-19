@@ -29,7 +29,7 @@
     <body>
         <div class="container">
             <div class="table-wrapper">
-                <div class="table-title">
+                <div class="table-title" style="width: 1125px;">
                     <div class="row">
                         <div class="col-sm-6">
                             <h2>Edit <b>Product</b></h2>

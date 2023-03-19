@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
- */
 package control;
 
 import dao.LoginDAO;
@@ -13,33 +9,31 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- *
- * @author PC
- */
-public class SignUpControl extends HttpServlet {
-
-    @Override
+public class SignUpControl extends HttpServlet { 
+  
+@Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        String user = request.getParameter("username");
-        String pass = request.getParameter("password");
+        String user = request.getParameter("su_username");
+        String pass = request.getParameter("su_password");
         String repass = request.getParameter("repass");
         if (!pass.equals(repass)) {
-            response.sendRedirect("Login.jsp");
+            request.setAttribute("error", "Account creation failed");
+            request.getRequestDispatcher("Login.jsp").forward(request, response);
         } else {
             LoginDAO dao = new LoginDAO();
-            Account a = dao.checkAccountExits(user);
-            if (a == null) {
+            boolean a = dao.checkAccountExits(user);
+            if (a) {
                 //dc signup
                 dao.signup(user, pass);
-                response.sendRedirect("Login.jsp");
+                request.setAttribute("error", "Successful account creation");
+                request.getRequestDispatcher("Login.jsp").forward(request, response);
             } else {
                 //Day ve trang login
+                request.setAttribute("error", "Account already exists");
                 request.getRequestDispatcher("Login.jsp").forward(request, response);
             }
         }
     }
-
 }

@@ -3,7 +3,7 @@
     Created on : Dec 29, 2020, 5:43:04 PM
     Author     : trinh
 --%>
-
+<%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -16,7 +16,7 @@
         <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <link href="css/detail.css" rel="stylesheet" type="text/css"/>
         <link href="css/home.css" rel="stylesheet"/>
-        
+
         <style>
             .gallery-wrap .img-big-wrap img {
                 height: 450px;
@@ -49,6 +49,11 @@
                 width: 100% !important;
                 height: auto !important;
             }
+            .button{
+                display: flex;
+                flex-direction: row;
+                padding: 30px;
+            }
         </style>
     </head>
     <body>
@@ -75,7 +80,8 @@
 
                                         <p class="price-detail-wrap"> 
                                             <span class="price h3 text-warning"> 
-                                                <span class="num">${detail.salePrice} </span><span class="currency"> VND</span>
+<!--                                                <span class="num"></span><span class="currency"> VND</span>-->
+                                                <fmt:formatNumber type = "number" maxFractionDigits = "3" value = "${detail.salePrice*90/100}"/> VND
                                             </span> 
                                         </p> <!-- price-detail-wrap .// -->
                                         <dl class="item-property">
@@ -102,8 +108,11 @@
 
                                         </div> <!-- row.// -->
                                         <hr>
-                                        <a href="#" class="btn btn-lg btn-primary text-uppercase"> Buy now </a>
-                                        <a href="#" class="btn btn-lg btn-outline-primary text-uppercase"> <i class="fas fa-shopping-cart"></i> Add to cart </a>
+                                        <div class="button">
+                                            <a href="cart" class="btn btn-lg btn-primary text-uppercase" style="margin: 0px 19px 0px -40px"> Buy now </a>
+                                            <a href="cart" class="btn btn-lg btn-outline-primary text-uppercase"> <i class="fas fa-shopping-cart"></i> Add to cart </a>
+
+                                        </div>
                                     </article> <!-- card-body.// -->
                                 </aside> <!-- col.// -->
                             </div> <!-- row.// -->

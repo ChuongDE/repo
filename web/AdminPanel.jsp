@@ -16,6 +16,7 @@
         <!-- Custom CSS -->
         <link rel="stylesheet" href="css/admin.css">
     </head>
+
     <body>        
         <div class="grid-container">
 
@@ -25,12 +26,16 @@
                     <span class="material-icons-outlined">menu</span>
                 </div>
                 <div class="header-left">
-                    <span class="material-icons-outlined">search</span>
+                    <a href="home">
+                        <span class="material-symbols-outlined">home</span>
+                    </a>    
                 </div>
                 <div class="header-right">
-                    
-                    <span class="material-icons-outlined">account_circle</span>
+                    <c:if test="${sessionScope.account.getRole() == 1}">
+                        <h5>Xin Chào ${sessionScope.account.username}</h5>
+                    </c:if>
                 </div>
+                <span class="material-icons-outlined">account_circle</span>
             </header>
             <!-- End Header -->
 
@@ -47,7 +52,7 @@
 
                 <ul class="sidebar-list">
                     <li class="sidebar-list-item">
-                        <a href="#" target="_blank">
+                        <a href="admin" target="">
                             <span class="material-icons-outlined">dashboard</span> Dashboard
                         </a>
                     </li>
@@ -73,13 +78,13 @@
                     </li>
                     <li class="sidebar-list-item">
                         <a href="userctl" target="">
-                            <span class="material-symbols-outlined">manage_accounts</span> Account Manager
+                            <span class="material-icons-outlined">manage_accounts</span> Account Manager
                         </a>
                     </li>
                     <li class="sidebar-list-item">
-                        <a href="#" target="_blank">
-                            <span class="material-icons-outlined">settings</span> Settings
-                        </a>
+                        <a href="logout" target="">
+                            <span class="material-icons-outlined">logout</span> Log Out
+                        </a> 
                     </li>
                 </ul>
             </aside>
@@ -99,8 +104,8 @@
 
                             <span class="material-icons-outlined text-blue">inventory_2</span>
                         </div>
-                        
-                        <span class="text-primary font-weight-bold">100 </span>
+
+                        <span class="text-primary font-weight-bold">${total}</span>
 
 
                     </div>

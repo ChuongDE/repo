@@ -154,6 +154,7 @@ div .icon{
     padding: 10px 15px;
 }
 
+
 /* Menu hiện thị giỏ hàng */
 .header .hd2-cart  .sub-menu2{
     display: none;
@@ -294,7 +295,7 @@ div .icon{
     filter:brightness(0.8) ;
 }
 .price-box{
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family: serif, 'Times New Roman', Times, serif;
     font-size: 20px;
 }
 

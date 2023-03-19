@@ -9,12 +9,26 @@ package entity;
  * @author PC
  */
 public class Account {
+
     private int userID;
     private String username;
     private String password;
     private int role;
+    private String Name;
+    private String Address;
+    private String Phone;
 
     public Account() {
+    }
+
+    public Account(int userID, String username, String password, int role, String Name, String Address, String Phone) {
+        this.userID = userID;
+        this.username = username;
+        this.password = password;
+        this.role = role;
+        this.Name = Name;
+        this.Address = Address;
+        this.Phone = Phone;
     }
 
     public Account(int userID, String username, String password, int role) {
@@ -34,8 +48,38 @@ public class Account {
         this.username = username;
         this.password = password;
     }
+
+    public Account(String username, String password, String Name, String Address, String Phone) {
+        this.username = username;
+        this.password = password;
+        this.Name = Name;
+        this.Address = Address;
+        this.Phone = Phone;
+    }
     
-    
+    public String getName() {
+        return Name;
+    }
+
+    public void setName(String Name) {
+        this.Name = Name;
+    }
+
+    public String getAddress() {
+        return Address;
+    }
+
+    public void setAddress(String Address) {
+        this.Address = Address;
+    }
+
+    public String getPhone() {
+        return Phone;
+    }
+
+    public void setPhone(String Phone) {
+        this.Phone = Phone;
+    }
 
     public int getUserID() {
         return userID;
@@ -44,7 +88,7 @@ public class Account {
     public void setUserID(int userID) {
         this.userID = userID;
     }
-    
+
     public String getUsername() {
         return username;
     }
@@ -73,6 +117,5 @@ public class Account {
     public String toString() {
         return "Account{" + " username=" + username + ", password=" + password + ", role=" + role + '}';
     }
-    
-    
+
 }

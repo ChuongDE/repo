@@ -4,11 +4,79 @@
  */
 package dao;
 
+import context.DBContext;
+import entity.Account;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  *
  * @author PC
  */
 public class UserDAO {
     
+    Connection conn = null;
+    PreparedStatement ps = null;
+    ResultSet rs = null;
     
+    
+    public List<Account> getAll(){
+        List<Account> list = new ArrayList<>();
+        String query = "";
+        
+        try {
+            
+        } catch (Exception e) {
+        }
+        return list;
+    }
+    
+    
+    public String getName(String userName){
+        try {
+            String query = "select b.Name\n" +
+                            "from tbAccount a, tbUserInfor b\n" +
+                            "where a.UserID = b.UserID and a.UserName = ?";
+            conn = new DBContext().getConnection();
+            ps = conn.prepareStatement(query);
+            ps.setString(1, userName);
+            rs = ps.executeQuery();
+            while (rs.next())  return rs.getString(1);
+        } catch (Exception e) {
+        }
+        return "";
+    }
+    
+    public String getAddress(String userName){
+        try {
+            String query = "select b.Address\n" +
+                            "from tbAccount a, tbUserInfor b\n" +
+                            "where a.UserID = b.UserID and a.UserName = ?";
+            conn = new DBContext().getConnection();
+            ps = conn.prepareStatement(query);
+            ps.setString(1, userName);
+            rs = ps.executeQuery();
+            while (rs.next())  return rs.getString(1);
+        } catch (Exception e) {
+        }
+        return "";
+    }
+    
+    public String getPhone(String userName){
+        try {
+            String query = "select b.Phone\n" +
+                            "from tbAccount a, tbUserInfor b\n" +
+                            "where a.UserID = b.UserID and a.UserName = ?";
+            conn = new DBContext().getConnection();
+            ps = conn.prepareStatement(query);
+            ps.setString(1, userName);
+            rs = ps.executeQuery();
+            while (rs.next())  return rs.getString(1);
+        } catch (Exception e) {
+        }
+        return "";
+    }
 }

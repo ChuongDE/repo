@@ -163,6 +163,9 @@ body {
   border-radius: 5px;
   box-shadow: 0 6px 7px -4px rgba(0, 0, 0, 0.2);
 }
+.containerr{
+    justify-items: center;
+}
 
 .card:first-child {
   border-left: 7px solid #246dec;

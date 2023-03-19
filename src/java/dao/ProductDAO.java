@@ -133,7 +133,7 @@ public class ProductDAO {
             ps.setString(1, cid);
             rs = ps.executeQuery();
             int id = Integer.parseInt(cid);
-            while(rs.next()){
+            while (rs.next()) {
                 Category c = new Category(id, rs.getString(1));
                 return c;
             }
@@ -214,29 +214,25 @@ public class ProductDAO {
         }
     }
 
-    public List<Product> getTop8ProductByCate1() {
+    public List<Product> getTop8ProductByCate(String i) {
         List<Product> list = new ArrayList<>();
 
         String query = "select top 8 ProductID,\n"
                 + "ProductName, \n"
-                + "Image, \n"
                 + "SalePrice, \n"
+                + "Image, \n"
                 + "CateID from tbProduct\n"
-                + "Where CateID = 1";
+                + "Where CateID = ?";
         try {
             ps = conn.prepareStatement(query);
-
+            ps.setString(1, i);
             rs = ps.executeQuery();
             while (rs.next()) {
                 list.add(new Product(rs.getInt(1),
                         rs.getString(2),
                         rs.getInt(3),
-                        rs.getInt(4),
-                        rs.getString(5),
-                        rs.getString(6),
-                        rs.getInt(7),
-                        rs.getInt(8),
-                        rs.getDate(9)));
+                        rs.getString(4),
+                        rs.getInt(5)));
             }
         } catch (Exception e) {
         }
@@ -271,5 +267,55 @@ public class ProductDAO {
             ps.executeUpdate();
         } catch (Exception e) {
         }
+    }
+
+    public List<Product> searchByName(String txtSearch) {
+        List<Product> list = new ArrayList<>();
+        String query = "select *from tbProduct\n"
+                + "where [ProductName] like ?";
+
+        try {
+            ps = conn.prepareStatement(query);
+            ps.setString(1, "%" + txtSearch + "%");
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                list.add(new Product(rs.getInt(1),
+                        rs.getString(2),
+                        rs.getInt(3),
+                        rs.getInt(4),
+                        rs.getString(5),
+                        rs.getString(6),
+                        rs.getInt(7),
+                        rs.getInt(8),
+                        rs.getDate(9)));
+            }
+        } catch (Exception e) {
+        }
+
+        return list;
+    }
+    
+    public List<Product> getTop8(){
+        List<Product> list = new ArrayList<>();
+        String query = "select top 8 *from tbProduct";
+
+        try {
+            ps = conn.prepareStatement(query);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                list.add(new Product(rs.getInt(1),
+                        rs.getString(2),
+                        rs.getInt(3),
+                        rs.getInt(4),
+                        rs.getString(5),
+                        rs.getString(6),
+                        rs.getInt(7),
+                        rs.getInt(8),
+                        rs.getDate(9)));
+            }
+        } catch (Exception e) {
+        }
+
+        return list;
     }
 }

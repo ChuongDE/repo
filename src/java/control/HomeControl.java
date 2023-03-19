@@ -1,46 +1,41 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
- */
-
 package control;
 
 import dao.ProductDAO;
 import entity.Category;
 import entity.Product;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- *
- * @author PC
- */
 public class HomeControl extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
+       
         //Get DATA From dao
         ProductDAO dao = new ProductDAO();
         List<Category> listC = dao.getAllCategory();
-        List<Product> listP1 = dao.getTop8ProductByCate1();
-        //Set DATA to JSP
-         
-        request.setAttribute("listCate", listC);
-        request.setAttribute("listP1", listP1);
-
+        List<Product> listNam = dao.getTop8ProductByCate("2");
+        List<Product> listNu = dao.getTop8ProductByCate("3");
+        List<Product> listMini = dao.getTop8ProductByCate("1");
         
+        //Set DATA to JSP
+        
+       
+        request.setAttribute("listCate", listC);
+        request.setAttribute("listNam", listNam);
+        request.setAttribute("listNu", listNu);
+        request.setAttribute("listMini", listMini);
         request.getRequestDispatcher("HomePage.jsp").forward(request, response);
     } 
-
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
-    /** 
+    /**
      * Handles the HTTP <code>GET</code> method.
+     *
      * @param request servlet request
      * @param response servlet response
      * @throws ServletException if a servlet-specific error occurs
@@ -48,12 +43,14 @@ public class HomeControl extends HttpServlet {
      */
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
-    throws ServletException, IOException {
+            throws ServletException, IOException {
         processRequest(request, response);
-    } 
 
-    /** 
+    }
+
+    /**
      * Handles the HTTP <code>POST</code> method.
+     *
      * @param request servlet request
      * @param response servlet response
      * @throws ServletException if a servlet-specific error occurs
@@ -61,12 +58,14 @@ public class HomeControl extends HttpServlet {
      */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
-    throws ServletException, IOException {
+            throws ServletException, IOException {
         processRequest(request, response);
+
     }
 
-    /** 
+    /**
      * Returns a short description of the servlet.
+     *
      * @return a String containing servlet description
      */
     @Override

@@ -1,5 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    <filter>
+        <filter-name>AdminFilter</filter-name>
+        <filter-class>Filter.AdminFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>AdminFilter</filter-name>
+        <url-pattern>/admin</url-pattern>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>AdminFilter</filter-name>
+        <url-pattern>/edit</url-pattern>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>AdminFilter</filter-name>
+        <url-pattern>/manager</url-pattern>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>AdminFilter</filter-name>
+        <url-pattern>/delete</url-pattern>
+    </filter-mapping>
     <servlet>
         <servlet-name>LoginControl</servlet-name>
         <servlet-class>control.LoginControl</servlet-class>
@@ -39,6 +59,10 @@
     <servlet>
         <servlet-name>DetailControl</servlet-name>
         <servlet-class>control.DetailControl</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ProfileControl</servlet-name>
+        <servlet-class>control.ProfileControl</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>LoginControl</servlet-name>
@@ -83,6 +107,10 @@
     <welcome-file-list>
         <welcome-file>home</welcome-file>
     </welcome-file-list>
+    <servlet-mapping>
+        <servlet-name>ProfileControl</servlet-name>
+        <url-pattern>/ProfileControl</url-pattern>
+    </servlet-mapping>
     <session-config>
         <session-timeout>
             30

@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package dao;
 
 import context.DBContext;
@@ -20,6 +16,21 @@ public class LoginDAO {
     PreparedStatement ps = null;
     ResultSet rs = null;
 
+    public boolean checkUser(String user) {
+        try {
+            String query = "select * from tbAccount \n"
+                    + "where UserName = ?";
+            conn = new DBContext().getConnection();
+            ps = conn.prepareStatement(query);
+            ps.setString(1, user);
+            rs = ps.executeQuery();
+            while (rs.next())  return true;
+        } catch (Exception e) {
+        }
+
+        return false;
+    }
+
     public Account checkLogin(String user, String pass) {
         try {
             String query = "select * from tbAccount \n"
@@ -29,10 +40,18 @@ public class LoginDAO {
             ps.setString(1, user);
             ps.setString(2, pass);
             
+            UserDAO userdao = new UserDAO();
             rs = ps.executeQuery();
             while (rs.next()) {
-                
-                Account a = new Account(rs.getString(user),rs.getString(pass), 1);
+
+                Account a = new Account(rs.getInt(1),
+                        rs.getString(2),
+                        rs.getString(3),
+                        rs.getInt(4),
+                        userdao.getName(user),
+                        userdao.getAddress(user),
+                        userdao.getPhone(user)
+                );
                 return a;
             }
         } catch (Exception e) {
@@ -41,7 +60,7 @@ public class LoginDAO {
         return null;
     }
 
-    public Account checkAccountExits(String user) {
+    public boolean checkAccountExits(String user) {
 
         try {
             String query = "select * from tbAccount where username = ?  ";
@@ -50,13 +69,12 @@ public class LoginDAO {
             ps.setString(1, user);
             rs = ps.executeQuery();
             while (rs.next()) {
-                Account a = new Account(rs.getString(1), rs.getString(2), 0);
-                return a;
+                return false;
             }
         } catch (Exception e) {
         }
 
-        return null;
+        return true;
     }
 
     public Account signup(String user, String pass) {
