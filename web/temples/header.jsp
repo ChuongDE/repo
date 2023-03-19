@@ -49,7 +49,9 @@
         </c:if>
             
         <c:if test="${sessionScope.account != null}">
-            <a href="ProfileControl?username=${sessionScope.account.username} name="username""><i style="" class="fa-solid fa-user"></i></a>
+            <a href="profile?username=${sessionScope.account.username}" >
+                <i style="" class="fa-solid fa-user"></i>
+            </a>
         </c:if>
 
 

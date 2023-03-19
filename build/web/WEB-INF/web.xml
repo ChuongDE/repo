@@ -109,7 +109,7 @@
     </welcome-file-list>
     <servlet-mapping>
         <servlet-name>ProfileControl</servlet-name>
-        <url-pattern>/ProfileControl</url-pattern>
+        <url-pattern>/profile</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
