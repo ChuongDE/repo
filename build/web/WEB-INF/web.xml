@@ -20,6 +20,22 @@
         <filter-name>AdminFilter</filter-name>
         <url-pattern>/delete</url-pattern>
     </filter-mapping>
+    <filter-mapping>
+        <filter-name>AdminFilter</filter-name>
+        <url-pattern>/userctl</url-pattern>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>AdminFilter</filter-name>
+        <url-pattern>/inventory</url-pattern>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>AdminFilter</filter-name>
+        <url-pattern>/orderctl</url-pattern>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>AdminFilter</filter-name>
+        <url-pattern>/show</url-pattern>
+    </filter-mapping>
     <servlet>
         <servlet-name>LoginControl</servlet-name>
         <servlet-class>control.LoginControl</servlet-class>
@@ -63,6 +79,30 @@
     <servlet>
         <servlet-name>ProfileControl</servlet-name>
         <servlet-class>control.ProfileControl</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>BuyControl</servlet-name>
+        <servlet-class>control.BuyControl</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ShoppingCartControl</servlet-name>
+        <servlet-class>control.ShoppingCartControl</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ProcessControl</servlet-name>
+        <servlet-class>control.ProcessControl</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>CheckOutControl</servlet-name>
+        <servlet-class>control.CheckOutControl</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>OrderManagerControl</servlet-name>
+        <servlet-class>control.OrderManagerControl</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ShowControl</servlet-name>
+        <servlet-class>control.ShowControl</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>LoginControl</servlet-name>
@@ -109,7 +149,31 @@
     </welcome-file-list>
     <servlet-mapping>
         <servlet-name>ProfileControl</servlet-name>
-        <url-pattern>/profile</url-pattern>
+        <url-pattern>/ProfileControl</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>BuyControl</servlet-name>
+        <url-pattern>/buy</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ShoppingCartControl</servlet-name>
+        <url-pattern>/cart</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ProcessControl</servlet-name>
+        <url-pattern>/process</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CheckOutControl</servlet-name>
+        <url-pattern>/checkout</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>OrderManagerControl</servlet-name>
+        <url-pattern>/orderctl</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ShowControl</servlet-name>
+        <url-pattern>/show</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

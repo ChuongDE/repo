@@ -4,9 +4,10 @@
  */
 package control;
 
+import dao.CookieDAO;
 import java.io.IOException;
-import java.io.PrintWriter;
 import javax.servlet.ServletException;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -31,6 +32,35 @@ public class LogOutControl extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         HttpSession session = request.getSession();
+        
+        Cookie[] cookies = request.getCookies();
+
+        if (cookies != null) {
+            String username = null;
+            String cartValues = null;
+            for (Cookie cookie : cookies) {  
+                if (cookie.getName().equals("name")) {
+                    username = cookie.getValue();
+                    cookie.setMaxAge(0);
+                    System.out.println("Name Cookie: "+ cookie.getName() + "\nValues Cookie: " + cookie.getValue()+ "\nAge Cookie: " + cookie.getMaxAge());
+                }
+                
+                if (cookie.getName().equals("cart")) {
+                    cartValues = cookie.getValue();
+                    cookie.setMaxAge(0);
+                    System.out.println("Name Cookie: "+ cookie.getName() + "\nValues Cookie: " + cookie.getValue()+ "\nAge Cookie: " + cookie.getMaxAge());
+                }
+                
+                if(username != null && cartValues != null){
+                    CookieDAO data = new CookieDAO();
+                    data.removeCookie(username);
+                    data.insertCookie(username, "cart", cartValues);
+                }
+                cookie.setMaxAge(0);
+                response.addCookie(cookie);
+            }
+        }
+        
         session.removeAttribute("account");
         response.sendRedirect("home");
     }

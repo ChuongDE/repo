@@ -10,12 +10,40 @@ package entity;
  */
 public class OrderDetail {
     private int oid, pid;
+    private String name;
     private int quantity;
+    private String image;
+
+    public String getImage() {
+        return image;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public OrderDetail(int pid, String name,  String image, int quantity,double price) {
+        this.pid = pid;
+        this.name = name;
+        this.quantity = quantity;
+        this.image = image;
+        this.price = price;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
     private double price;
 
     public OrderDetail() {
     }
 
+    
+    
     public OrderDetail(int oid, int pid, int quantity, double price) {
         this.oid = oid;
         this.pid = pid;

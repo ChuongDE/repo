@@ -51,7 +51,7 @@
                                 <div class="modal-body">
                                     <div class="form-group">
                                         <label>Product ID</label>
-                                        <input value="${detail.productID}"name="id" type="text" class="form-control" >
+                                        <input value="${detail.productID}"name="id" type="text" class="form-control" readonly>
                                     </div>
                                     <div class="form-group">
                                         <label>Product Name</label>

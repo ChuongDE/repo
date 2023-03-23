@@ -91,8 +91,8 @@
                                                 </p></dd>
                                         </dl>
 
-                                        <hr>
-                                        <div class="row">
+                                        
+<!--                                        <div class="row">
                                             <div class="col-sm-5">
                                                 <dl class="param param-inline">
                                                     <dt>Quantity: </dt>
@@ -103,14 +103,14 @@
                                                             <option> 3 </option>
                                                         </select>
                                                     </dd>
-                                                </dl>  <!-- item-property .// -->
-                                            </div> <!-- col.// -->
+                                                </dl>   item-property .// 
+                                            </div>  col.// 
 
-                                        </div> <!-- row.// -->
+                                        </div>  row.// -->
                                         <hr>
                                         <div class="button">
-                                            <a href="cart" class="btn btn-lg btn-primary text-uppercase" style="margin: 0px 19px 0px -40px"> Buy now </a>
-                                            <a href="cart" class="btn btn-lg btn-outline-primary text-uppercase"> <i class="fas fa-shopping-cart"></i> Add to cart </a>
+                                            <a href="buy?id=${detail.productID}&num=1" class="btn btn-lg btn-primary text-uppercase" style="margin: 0px 19px 0px -40px"> Buy now </a>
+                                            <a href="buy?id=${detail.productID}&num=1" class="btn btn-lg btn-outline-primary text-uppercase"> <i class="fas fa-shopping-cart"></i> Add to cart </a>
 
                                         </div>
                                     </article> <!-- card-body.// -->

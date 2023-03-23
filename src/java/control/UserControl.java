@@ -4,8 +4,11 @@
  */
 package control;
 
+import dao.UserDAO;
+import entity.Account;
 import java.io.IOException;
-import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -22,7 +25,10 @@ public class UserControl extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        
+        UserDAO dao = new UserDAO();
+        List<Account> list = dao.getAll();
+        System.out.println(list);
+        request.setAttribute("listU", list);
         
         request.getRequestDispatcher("UserManager.jsp").forward(request, response);
     }

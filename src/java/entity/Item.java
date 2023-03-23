@@ -1,25 +1,15 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package entity;
 
-/**
- *
- * @author PC
- */
 public class Item {
-     private Product product;
-    private int quantity;
-    private double price;
+    private Product product;
+    private int Quantity;
 
     public Item() {
     }
 
-    public Item(Product product, int quantity, double price) {
+    public Item(Product product, int Quantity) {
         this.product = product;
-        this.quantity = quantity;
-        this.price = price;
+        this.Quantity = Quantity;
     }
 
     public Product getProduct() {
@@ -31,19 +21,12 @@ public class Item {
     }
 
     public int getQuantity() {
-        return quantity;
+        return Quantity;
     }
 
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
+    public void setQuantity(int Quantity) {
+        this.Quantity = Quantity;
     }
-
-    public double getPrice() {
-        return price;
-    }
-
-    public void setPrice(double price) {
-        this.price = price;
-    }
+    
     
 }

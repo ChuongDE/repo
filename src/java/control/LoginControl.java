@@ -1,5 +1,6 @@
 package control;
 
+import dao.CookieDAO;
 import dao.LoginDAO;
 import entity.Account;
 import java.io.IOException;
@@ -67,6 +68,17 @@ public class LoginControl extends HttpServlet {
                 //add browser cua nguoi dung
                 response.addCookie(userCookie);
                 response.addCookie(passwordCookie);
+                
+//                Lấy Cookie Cart từ databases
+                CookieDAO data = new CookieDAO();
+                String cart = data.getCookieCart(user);
+                if(cart != null){
+                    Cookie cartCookie = new Cookie("cart", cart);
+                    cartCookie.setMaxAge(60*60*24);
+                    response.addCookie(cartCookie); 
+                }
+                
+                
                 if (a.getRole() == 1) {
                     HttpSession session = request.getSession();
                     session.setAttribute("account", a);

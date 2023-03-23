@@ -33,7 +33,9 @@ Author     : trinh
                     <span class="material-icons-outlined">menu</span>
                 </div>
                 <div class="header-left">
-                    <span class="material-icons-outlined">search</span>
+                    <a href="home">
+                        <span class="material-symbols-outlined" style="color: black">home</span>
+                    </a>   
                 </div>
                 <div class="header-right">
                     <c:if test="${sessionScope.account.getRole() == 1}">
@@ -43,6 +45,7 @@ Author     : trinh
                 <span class="material-icons-outlined">account_circle</span>
             </header>
             <!-- End Header -->
+
 
             <!-- Sidebar -->
             <aside id="sidebar">
@@ -57,7 +60,7 @@ Author     : trinh
 
                 <ul class="sidebar-list">
                     <li class="sidebar-list-item">
-                        <a href="admin  " target="">
+                        <a href="admin" target="">
                             <span class="material-icons-outlined">dashboard</span> Dashboard
                         </a>
                     </li>
@@ -72,13 +75,8 @@ Author     : trinh
                         </a>
                     </li>
                     <li class="sidebar-list-item">
-                        <a href="#" target="_blank">
+                        <a href="orderctl" target="">
                             <span class="material-icons-outlined">add_shopping_cart</span> Purchase Orders
-                        </a>
-                    </li>
-                    <li class="sidebar-list-item">
-                        <a href="#" target="_blank">
-                            <span class="material-icons-outlined">shopping_cart</span> Sales Orders
                         </a>
                     </li>
                     <li class="sidebar-list-item">
@@ -94,6 +92,7 @@ Author     : trinh
                 </ul>
             </aside>
             <!-- End Sidebar -->
+
 
             <!-- Main -->
             <div class="containerr">
@@ -153,18 +152,20 @@ Author     : trinh
                         </div>
 
                     </div>
+
                     <!-- Edit Modal HTML -->
 
 
                     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog">
                             <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLabel">Add New Product</h5>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body">
-                                    <form>
+                                <form action="add" method="post">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Add New Product</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+
                                         <div class="modal-body">					
                                             <div class="form-group">
                                                 <label>Name</label>
@@ -202,21 +203,25 @@ Author     : trinh
                                                     </c:forEach>
                                                 </select>
                                             </div>
-                                    </form>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                        <button type="button" class="btn btn-primary">Save</button>
+
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+
+                                                <input type="submit" class="btn btn-success" value="Add">
+
+                                            </div>
+
+                                        </div>
                                     </div>
-                                </div>
+                                </form>
                             </div>
-                        </div>
-                        <!-- Scripts -->
-                        <!-- ApexCharts -->
-                        <script src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.35.3/apexcharts.min.js"></script>
-                        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-                        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-                        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
-                        <!-- Custom JS -->
-                        <script src="./js/manager.js"></script>
-                        </body>
-                        </html>
+                            <!-- Scripts -->
+                            <!-- ApexCharts -->
+                            <script src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.35.3/apexcharts.min.js"></script>
+                            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+                            <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+                            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+                            <!-- Custom JS -->
+                            <script src="./js/manager.js"></script>
+                            </body>
+                            </html>

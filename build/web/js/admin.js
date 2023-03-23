@@ -55,7 +55,7 @@ var barChartOptions = {
     show: false
   },
   xaxis: {
-    categories: ["Laptop", "Phone", "Monitor", "Headphones", "Camera"],
+    categories: ["Dior J’Adore", "Dior Sauvage EDP", "Chanel Chance EDP", "BLEU DE CHANEL", "Lancôme Miracle"],
   },
   yaxis: {
     title: {

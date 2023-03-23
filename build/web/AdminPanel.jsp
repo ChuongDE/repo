@@ -1,4 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -67,13 +68,8 @@
                         </a>
                     </li>
                     <li class="sidebar-list-item">
-                        <a href="#" target="_blank">
+                        <a href="orderctl" target="">
                             <span class="material-icons-outlined">add_shopping_cart</span> Purchase Orders
-                        </a>
-                    </li>
-                    <li class="sidebar-list-item">
-                        <a href="#" target="_blank">
-                            <span class="material-icons-outlined">shopping_cart</span> Sales Orders
                         </a>
                     </li>
                     <li class="sidebar-list-item">
@@ -115,24 +111,19 @@
                             <p class="text-primary">PURCHASE ORDERS</p>
                             <span class="material-icons-outlined text-orange">add_shopping_cart</span>
                         </div>
-                        <span class="text-primary font-weight-bold">83</span>
+                        <span class="text-primary font-weight-bold">${totalOrder}</span>
                     </div>
 
                     <div class="card">
                         <div class="card-inner">
-                            <p class="text-primary">SALES ORDERS</p>
+                            <p class="text-primary">Renevue</p>
                             <span class="material-icons-outlined text-green">shopping_cart</span>
                         </div>
-                        <span class="text-primary font-weight-bold">79</span>
+                        <span class="text-primary font-weight-bold">
+                            <fmt:formatNumber type = "number" maxFractionDigits = "3" value = "${totalRenevue}"/> VND
+                        </span>
                     </div>
 
-                    <div class="card">
-                        <div class="card-inner">
-                            <p class="text-primary">INVENTORY ALERTS</p>
-                            <span class="material-icons-outlined text-red">notification_important</span>
-                        </div>
-                        <span class="text-primary font-weight-bold">56</span>
-                    </div>
 
                 </div>
 

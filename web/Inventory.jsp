@@ -57,34 +57,29 @@
                         </a>
                     </li>
                     <li class="sidebar-list-item">
-                        <a href="#" target="_blank">
+                        <a href="inventory" target="">
                             <span class="material-icons-outlined">fact_check</span> Inventory
                         </a>
                     </li>
                     <li class="sidebar-list-item">
-                        <a href="#" target="_blank">
+                        <a href="orderctl" target="">
                             <span class="material-icons-outlined">add_shopping_cart</span> Purchase Orders
                         </a>
                     </li>
                     <li class="sidebar-list-item">
-                        <a href="#" target="_blank">
-                            <span class="material-icons-outlined">shopping_cart</span> Sales Orders
-                        </a>
-                    </li>
-                    <li class="sidebar-list-item">
                         <a href="userctl" target="">
-                            <span class="material-symbols-outlined">manage_accounts</span> Account Manager
+                            <span class="material-icons-outlined">manage_accounts</span> Account Manager
                         </a>
                     </li>
                     <li class="sidebar-list-item">
-                        <a href="#" target="_blank">
-                            <span class="material-icons-outlined">settings</span> Settings
-                        </a>
+                        <a href="logout" target="">
+                            <span class="material-icons-outlined">logout</span> Log Out
+                        </a> 
                     </li>
                 </ul>
             </aside>
             <!-- End Sidebar -->
-
+            
             <!-- Main -->
             <main class="main-container">
                 <div class="main-title">

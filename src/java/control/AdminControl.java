@@ -4,10 +4,9 @@
  */
 package control;
 
+import dao.OrderDAO;
 import dao.ProductDAO;
-import entity.Product;
 import java.io.IOException;
-import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -23,10 +22,15 @@ public class AdminControl extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         
+        OrderDAO dao1 = new OrderDAO();
         ProductDAO dao = new ProductDAO();
         int total = dao.getTotalProduct();
+        int totalOrder = dao1.getTotalOrder();
+        int totalRenevue = dao1.getTotalRenevue();
         
+        request.setAttribute("totalOrder", totalOrder);
         request.setAttribute("total", total);
+        request.setAttribute("totalRenevue", totalRenevue);
         request.getRequestDispatcher("AdminPanel.jsp").forward(request, response);
     }
 

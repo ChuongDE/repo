@@ -1,7 +1,7 @@
 <%-- 
-    Document   : ProductPage
-    Created on : Feb 28, 2023, 11:34:37 PM
-    Author     : PC
+   Document   : ProductPage
+   Created on : Feb 28, 2023, 11:34:37 PM
+   Author     : PC
 --%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -53,11 +53,14 @@
                 </div>
 
                 <form class="d-flex">
-                    <button class="btn btn-outline-dark" type="submit">
-                        <i class="bi-cart-fill me-1"></i>
-                        Cart
-                        <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
+
+                    <button class="btn btn-outline-dark" type="">
+                        <a href="cart" style="text-decoration: none; color: black">
+                            <i class="bi-cart-fill me-1" ></i>
+                            Giỏ Hàng
+                        </a>
                     </button>
+
                 </form>
             </div>
         </div>
@@ -67,7 +70,7 @@
         <div class="container px-4 px-lg-5 my-5">
             <div class="text-center text-white">
                 <c:if test="${txtS == null}">
-                <h1 class="display-4 fw-bolder">${cate.cateName}</h1>
+                    <h1 class="display-4 fw-bolder">${cate.cateName}</h1>
                 </c:if>
                 <c:if test="${txtS != null}">
                     <h1 class="display-4 fw-bolder">${txtS}</h1>
@@ -100,16 +103,22 @@
                             <!-- Product actions-->
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                                 <div class="text-center">
-                                    <a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a>
+                                    <c:if test="${sessionScope.account == null}">
+                                        <a class="btn btn-outline-dark mt-auto" href="Login.jsp">Add to cart</a>
+                                    </c:if>
+                                    <c:if test="${sessionScope.account != null}">
+                                        <a class="btn btn-outline-dark mt-auto" href="buy?id=${o.productID}&num=1">Add to cart</a>
+                                    </c:if>
+
                                 </div>
                             </div>
                         </div>
                     </div>
                 </c:forEach>
-                
+
             </div>
         </div>
-       
+
     </section>
     <!-- Footer-->
     <!-- Bootstrap core JS-->

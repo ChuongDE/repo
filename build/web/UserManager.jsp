@@ -1,3 +1,5 @@
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -21,18 +23,20 @@
     <body>
         <div class="grid-container">
 
-            
+
             <!-- Header -->
             <header class="header">
                 <div class="menu-icon" onclick="openSidebar()">
                     <span class="material-icons-outlined">menu</span>
                 </div>
                 <div class="header-left">
-                    <span class="material-icons-outlined">search</span>
+                    <a href="home">
+                        <span class="material-symbols-outlined" style="color: black">home</span>
+                    </a>  
                 </div>
                 <div class="header-right">
                     <c:if test="${sessionScope.account.getRole() == 1}">
-                        <h5>Xin Ch‡o ${sessionScope.account.username}</h5>
+                        <h5>Xin Ch√†o ${sessionScope.account.username}</h5>
                     </c:if>
                 </div>
                 <span class="material-icons-outlined">account_circle</span>
@@ -52,7 +56,7 @@
 
                 <ul class="sidebar-list">
                     <li class="sidebar-list-item">
-                        <a href="admin  " target="">
+                        <a href="admin" target="">
                             <span class="material-icons-outlined">dashboard</span> Dashboard
                         </a>
                     </li>
@@ -67,24 +71,19 @@
                         </a>
                     </li>
                     <li class="sidebar-list-item">
-                        <a href="#" target="_blank">
+                        <a href="orderctl" target="">
                             <span class="material-icons-outlined">add_shopping_cart</span> Purchase Orders
                         </a>
                     </li>
                     <li class="sidebar-list-item">
-                        <a href="#" target="_blank">
-                            <span class="material-icons-outlined">shopping_cart</span> Sales Orders
-                        </a>
-                    </li>
-                    <li class="sidebar-list-item">
                         <a href="userctl" target="">
-                            <span class="material-symbols-outlined">manage_accounts</span> Account Manager
+                            <span class="material-icons-outlined">manage_accounts</span> Account Manager
                         </a>
                     </li>
                     <li class="sidebar-list-item">
-                        <a href="#" target="_blank">
-                            <span class="material-icons-outlined">settings</span> Settings
-                        </a>
+                        <a href="logout" target="">
+                            <span class="material-icons-outlined">logout</span> Log Out
+                        </a> 
                     </li>
                 </ul>
             </aside>
@@ -108,21 +107,25 @@
                                 <th>Name</th>
                                 <th>Address</th>
                                 <th>Phone</th>
-                                <th>Actions</th>
+                                <th>Role</th>
                             </tr>
                         </thead>
                         <tbody>
+                            <c:forEach items="${listU}" var="o">
+                                <tr>
+                                    <td>${o.userID}</td>
+                                    <td>${o.name}</td>
+                                    <td>${o.address}</td>                               
+                                    <td>${o.phone}</td>
+                                    <c:if test="${o.role == 0}">
+                                        <td>User</td>
+                                    </c:if>
+                                    <c:if test="${o.role == 1}">
+                                        <td>Admin</td>
+                                    </c:if>
+                                </tr>
+                            </c:forEach>
 
-                            <tr>
-                                <td>DE160410</td>
-                                <td>Nguyen Bao Trung</td>
-                                <td>123124qmaoinsfonofnunaouuo onfaowienfoinowienoifn</td>                               
-                                <td>54564616464616</td>
-                                <td>
-                                    <a href="" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
-                                    <a href="" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
-                                </td>
-                            </tr>
 
                         </tbody>
                     </table>

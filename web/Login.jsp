@@ -19,7 +19,7 @@
 
                 <div class="title">LOGIN</div>
                 <c:if test="${sessionScope.account == null}">
-                    <h3 style="color: red">${requestScope.ms}</h3>
+                    <h3 style="color: red">${requestScope.error}</h3>
                 </c:if>
                 <c:if test="${sessionScope.account != null}">
                     <h3 style="color: red">${requestScope.error}</h3>

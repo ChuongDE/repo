@@ -14,21 +14,24 @@ public class Account {
     private String username;
     private String password;
     private int role;
-    private String Name;
-    private String Address;
-    private String Phone;
+    private String name;
+    private String address;
+    private String phone;
 
     public Account() {
     }
+    
 
+    
+    
     public Account(int userID, String username, String password, int role, String Name, String Address, String Phone) {
         this.userID = userID;
         this.username = username;
         this.password = password;
         this.role = role;
-        this.Name = Name;
-        this.Address = Address;
-        this.Phone = Phone;
+        this.name = Name;
+        this.address = Address;
+        this.phone = Phone;
     }
 
     public Account(int userID, String username, String password, int role) {
@@ -48,37 +51,51 @@ public class Account {
         this.username = username;
         this.password = password;
     }
-
+// 
+    
+    //    "Select UserName, Password, Name, Address, Phone \n" +
+//                            "from tbAccount a inner join tbUserInfor b \n" +
+//                            "on a.UserID = b.UserID and a.UserName = ? ";
     public Account(String username, String password, String Name, String Address, String Phone) {
         this.username = username;
         this.password = password;
-        this.Name = Name;
-        this.Address = Address;
-        this.Phone = Phone;
+        this.name = Name;
+        this.address = Address;
+        this.phone = Phone;
+    }
+
+    public Account(int userID, String Name, String Address, String Phone, int role) {
+        this.userID = userID;
+        this.name = Name;
+        this.address = Address;
+        this.phone = Phone;
+        this.role = role;
     }
     
+    
+    
     public String getName() {
-        return Name;
+        return name;
     }
 
     public void setName(String Name) {
-        this.Name = Name;
+        this.name = Name;
     }
 
     public String getAddress() {
-        return Address;
+        return address;
     }
 
     public void setAddress(String Address) {
-        this.Address = Address;
+        this.address = Address;
     }
 
     public String getPhone() {
-        return Phone;
+        return phone;
     }
 
     public void setPhone(String Phone) {
-        this.Phone = Phone;
+        this.phone = Phone;
     }
 
     public int getUserID() {
